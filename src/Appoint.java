@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,13 +34,10 @@ public class Appoint {
 		driver.findElement(By.xpath("//*[@id=\"btn-book-appointment\"]")).click();
 		
 		
-		// add validate
+		// add validate and Assert
 		String result = driver.findElement(By.id("comment")).getText();
 		
-		if(result.equalsIgnoreCase("Test"))
-			System.out.println("Pass");
-		else
-			System.out.println("Fail");
+		assertEquals("Test",result);
 		
 		Thread.sleep(4000);
 		 driver.quit();
